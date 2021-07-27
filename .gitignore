@@ -1,0 +1,5 @@
+# Ignoring folder
+.idea/
+
+# Ignoring files
+belajar-design-pattern.iml
