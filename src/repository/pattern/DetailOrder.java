@@ -1,4 +1,4 @@
-package repositry.pattern;
+package repository.pattern;
 
 public class DetailOrder {
     private String id;

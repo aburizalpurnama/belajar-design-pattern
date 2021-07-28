@@ -1,10 +1,8 @@
 package singleton.pattern;
 
-import repositry.pattern.DetailOrder;
-import repositry.pattern.DetailOrderRepository;
-import repositry.pattern.DetailOrderRepositoryImpl;
-
-import javax.sql.PooledConnection;
+import repository.pattern.DetailOrder;
+import repository.pattern.DetailOrderRepository;
+import repository.pattern.DetailOrderRepositoryImpl;
 
 public class OrderDetilService {
 

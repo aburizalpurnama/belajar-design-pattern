@@ -1,10 +1,8 @@
 package singleton.pattern;
 
-import repositry.pattern.Order;
-import repositry.pattern.OrderRepository;
-import repositry.pattern.OrderRepositoryImpl;
-
-import javax.xml.crypto.Data;
+import repository.pattern.Order;
+import repository.pattern.OrderRepository;
+import repository.pattern.OrderRepositoryImpl;
 
 public class OrderService {
 

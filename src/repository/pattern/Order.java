@@ -1,4 +1,4 @@
-package repositry.pattern;
+package repository.pattern;
 
 public class Order {
     private String id;

@@ -1,4 +1,4 @@
-package repositry.pattern;
+package repository.pattern;
 
 import java.io.ObjectStreamException;
 import java.util.List;

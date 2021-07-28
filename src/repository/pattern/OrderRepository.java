@@ -1,4 +1,4 @@
-package repositry.pattern;
+package repository.pattern;
 
 public interface OrderRepository extends Repository<Order>{
 }

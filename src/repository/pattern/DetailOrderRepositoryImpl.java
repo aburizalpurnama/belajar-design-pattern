@@ -1,4 +1,4 @@
-package repositry.pattern;
+package repository.pattern;
 
 import singleton.pattern.Connection;
 import singleton.pattern.DatabaseHelper;

@@ -1,9 +1,8 @@
-package repositry.pattern;
+package repository.pattern;
 
 import singleton.pattern.Connection;
 import singleton.pattern.DatabasePool;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
 public class OrderRepositoryImpl implements OrderRepository{
