@@ -1,5 +1,9 @@
 package singleton.pattern;
 
+import repository.pattern.DetailOrder;
+import repository.pattern.DetailOrderRepository;
+import repository.pattern.DetailOrderRepositoryImpl;
+
 public class OrderDetilService {
 
     /**
@@ -17,8 +21,18 @@ public class OrderDetilService {
 //        Connection connection = new singleton.pattern.Connection("localhost", "root", "root");
 //        connection.sql("INSERT INTO ORDER_DETAIL ....");
 //    }
+
+    // Menggunakan Object pool
+//    public void save (String orderId, String product){
+//        Connection connection = DatabaseHelper.getConnection();
+//        connection.sql("INSERT INTO ORDER_DETAIL ....");
+//        DatabasePool.close(connection);
+//    }
+
+    // Menggunakan Repository
     public void save (String orderId, String product){
-        DatabaseHelper.getConnection()
-                .sql("INSERT INTO ORDER_DETAIL ....");
+        DetailOrderRepository detailOrderRepository = new DetailOrderRepositoryImpl();
+        detailOrderRepository.insert(new DetailOrder(orderId, product));
     }
+
 }
