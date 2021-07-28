@@ -1,5 +1,9 @@
 package singleton.pattern;
 
+import repositry.pattern.Order;
+import repositry.pattern.OrderRepository;
+import repositry.pattern.OrderRepositoryImpl;
+
 import javax.xml.crypto.Data;
 
 public class OrderService {
@@ -28,9 +32,18 @@ public class OrderService {
      * Menggunakan pooling
      */
 
-    public void save (String orderId){
-        Connection connection = DatabasePool.getConnection();
-        connection.sql("INSERT INTO ORDER ..");
-        DatabasePool.close(connection);
+//    public void save (String orderId){
+//        Connection connection = DatabasePool.getConnection();
+//        connection.sql("INSERT INTO ORDER ..");
+//        DatabasePool.close(connection);
+//    }
+
+    /**
+     * Menggunakan Repository
+     */
+
+    public void save(String orderId){
+        OrderRepository orderRepository = new OrderRepositoryImpl();
+        orderRepository.insert(new Order(orderId));
     }
 }
