@@ -1,5 +1,7 @@
 package singleton.pattern;
 
+import javax.xml.crypto.Data;
+
 public class OrderService {
 
     /**
@@ -13,8 +15,22 @@ public class OrderService {
 //        connection.sql("INSERT INTO ORDER ....");
 //    }
 
+    /**
+     * Menggunakan singletone
+     * @param orderId
+     */
+//    public void save (String orderId){
+//        DatabaseHelper.getConnection()
+//                .sql("INSERT INTO ORDER ....");
+//    }
+
+    /**
+     * Menggunakan pooling
+     */
+
     public void save (String orderId){
-        DatabaseHelper.getConnection()
-                .sql("INSERT INTO ORDER ....");
+        Connection connection = DatabasePool.getConnection();
+        connection.sql("INSERT INTO ORDER ..");
+        DatabasePool.close(connection);
     }
 }
