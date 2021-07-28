@@ -1,5 +1,9 @@
 package singleton.pattern;
 
+import repository.pattern.Order;
+import repository.pattern.OrderRepository;
+import repository.pattern.OrderRepositoryImpl;
+
 public class OrderService {
 
     /**
@@ -13,8 +17,31 @@ public class OrderService {
 //        connection.sql("INSERT INTO ORDER ....");
 //    }
 
-    public void save (String orderId){
-        DatabaseHelper.getConnection()
-                .sql("INSERT INTO ORDER ....");
+    /**
+     * Menggunakan singletone
+     * @param orderId
+     */
+//    public void save (String orderId){
+//        DatabaseHelper.getConnection()
+//                .sql("INSERT INTO ORDER ....");
+//    }
+
+    /**
+     * Menggunakan pooling
+     */
+
+//    public void save (String orderId){
+//        Connection connection = DatabasePool.getConnection();
+//        connection.sql("INSERT INTO ORDER ..");
+//        DatabasePool.close(connection);
+//    }
+
+    /**
+     * Menggunakan Repository
+     */
+
+    public void save(String orderId){
+        OrderRepository orderRepository = new OrderRepositoryImpl();
+        orderRepository.insert(new Order(orderId));
     }
 }
